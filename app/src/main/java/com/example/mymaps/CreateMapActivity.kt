@@ -70,15 +70,6 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
         return super.onOptionsItemSelected(item)
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
@@ -92,7 +83,7 @@ class CreateMapActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.i(TAG, "onMapLongClickListener")
             showAlertDialog(latLng)
         }
-        // Add a marker in Sydney and move the camera
+        // Add a marker in Bay Area and adjust camera
         val bayArea = LatLng(37.4, -122.1)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bayArea, 10f))
     }
